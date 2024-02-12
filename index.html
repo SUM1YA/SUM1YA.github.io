@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+   <style>
+      html {
+      height: 100%;
+      width: 100%;
+      }
+      textarea {
+      resize: none;
+      overflow: hidden;
+      width: 1504px;
+      height: 277px;
+      }
+      div.b {
+      width: 700px;
+      word-wrap: break-word;
+      order: 1px solid;
+      }
+   </style>
+   <script>
+      function myFunction() {
+      
+        var x = document.getElementById("myText").value;
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        let mm = today.getMonth() + 1; // Months start at 0!
+        let dd = today.getDate();
+      
+        if (dd < 10) dd = '0' + dd;
+        if (mm < 10) mm = '0' + mm;
+      
+        const formattedToday = yyyy + '-' + mm + '-' + dd;
+        const output = " -o $SUPJAV/Uncensored/" + formattedToday + "/FC2PPV-x.mp4"
+        var y = x.replace("curl", "yt-dlp -N 10 -v --no-check-certificates").replaceAll("-H", "--add-headers").replace("--compressed", "").concat(output);
+        document.getElementById('demo').value = y;
+      
+      
+        //y.replace("yt-dlp -N 10 -v", "supjav-dlp").replace(/\\n/g, '').replace(/\\/g, '').replace(/\\/g, "");
+        const output2 = " -o $SUPJAV/Reducing Mosaic/" + formattedToday + "/x.mp4"
+        var yy = x.replace("curl", "yt-dlp -N 10 -v --no-check-certificates").replaceAll("-H", "--add-headers").replace("--compressed", "").concat(output2);
+        document.getElementById('demo2').value = yy;
+      }
+   </script>
+   <body>
+      <textarea type="text" onchange="myFunction()" id="myText" value="curl"
+         style="width: 1504px; height: 277px;"></textarea>
+      <textarea type="text" id="demo" style="width: 1504px; height: 277px;"></textarea>
+      <textarea type="text" id="demo2" style="width: 1504px; height: 277px;"></textarea>
+   </body>
+</html>
